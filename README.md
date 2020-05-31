@@ -13,10 +13,15 @@
 ### Installing
 把專案 clone 到本地段
 ```
-git clone 
+git clone https://github.com/D0561910/React-Todo-List-Express-Server.git
 ```
 
-進入該文件
+### Backend API Server Setup Reference
 ```
-cd 
+https://github.com/D0561910/React-Todo-List-Express-Server/tree/master/Firebase-Server
+```
+
+### React Todo-List Setup Reference
+```
+https://github.com/D0561910/React-Todo-List-Express-Server/tree/master/todo-list
 ```
