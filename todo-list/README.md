@@ -1,4 +1,6 @@
 # Todo List App
+## Demo Link :
+[a link](https://todo-firebase-1a591.firebaseapp.com/)
 
 ## Getting Started
 
@@ -29,4 +31,5 @@ const DATA_STATUS = "";
 ```
 
 ## Resource 
-Learn link: https://medium.com/javascript-in-plain-english/how-to-build-a-todo-list-app-with-react-hooks-and-typescript-b9cbdc61e966
+Learn link: 
+[a link](https://medium.com/javascript-in-plain-english/how-to-build-a-todo-list-app-with-react-hooks-and-typescript-b9cbdc61e966)
