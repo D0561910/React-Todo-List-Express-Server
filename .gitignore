@@ -67,3 +67,4 @@
 ./react-hooks-todo-list-app-ts/node_modules/
 ./react-hooks-todo-list-app-ts/package-lock.json/
 ./Firebase-Server/package-lock.json/
+./Firebase-Server/functions/package-lock.json/

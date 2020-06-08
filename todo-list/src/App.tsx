@@ -5,10 +5,20 @@ import axios from "axios";
 // Import components
 import TodoForm from "./components/todo-form";
 import TodoList from "./components/todo-list";
+
 // Import interfaces
 import { TodoInterface } from "./interfaces";
+
 // Import styles
 import "./styles/styles.css";
+
+// Define API
+// Example https://{Cloud-Functions-ID}/{Route-Name}/{api}/{API-Name}
+const GET_DATA = "";
+const CREATE_DATA = "";
+const UPDATE_DATA = "";
+const DELETE_DATA = "";
+const DATA_STATUS = "";
 
 // TodoListApp component
 const TodoListApp = () => {
@@ -16,9 +26,7 @@ const TodoListApp = () => {
 
   useEffect(() => {
     axios
-      .get(
-        "https://us-central1-todo-firebase-1a591.cloudfunctions.net/webApi/api/v1/api/data"
-      )
+      .get(GET_DATA)
       .then((res) => {
         let items = res.data.data;
         let todoItem = [];
@@ -42,12 +50,9 @@ const TodoListApp = () => {
     // Update todos state
     setTodos(newTodosState);
     axios
-      .post(
-        "https://us-central1-todo-firebase-1a591.cloudfunctions.net/webApi/api/v1/api/create",
-        todo
-      )
+      .post(CREATE_DATA, todo)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
       });
   }
 
@@ -63,10 +68,7 @@ const TodoListApp = () => {
       event.target.value;
 
     axios
-      .post(
-        "https://us-central1-todo-firebase-1a591.cloudfunctions.net/webApi/api/v1/api/update",
-        { id, task: event.target.value }
-      )
+      .post(UPDATE_DATA, { id, task: event.target.value })
       .then((res) => {
         // Update todos state
         setTodos(newTodosState);
@@ -80,10 +82,7 @@ const TodoListApp = () => {
       (todo: TodoInterface) => todo.id !== id
     );
     axios
-      .post(
-        "https://us-central1-todo-firebase-1a591.cloudfunctions.net/webApi/api/v1/api/delete",
-        { id }
-      )
+      .post(DELETE_DATA, { id })
       .then((res) => {
         // console.log(res);
         // Update todos state
@@ -106,12 +105,9 @@ const TodoListApp = () => {
     // console.log({ status });
 
     axios
-      .post(
-        "https://us-central1-todo-firebase-1a591.cloudfunctions.net/webApi/api/v1/api/status",
-        { id, done: !status }
-      )
+      .post(DATA_STATUS, { id, done: !status })
       .then((res) => {
-        console.log({res});
+        // console.log({ res });
         // Update todos state
         setTodos(newTodosState);
       });
